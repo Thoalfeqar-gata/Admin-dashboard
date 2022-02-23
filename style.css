@@ -1,0 +1,130 @@
+body 
+{
+    padding : 0px;
+    margin : 0px;
+}
+
+*
+{
+    font-family : roboto, arial, helvetica, sans-serif;
+}
+
+.container
+{
+    height : 100vh;
+    display : grid;
+    grid-template-rows : 1fr 5fr;
+    grid-template-columns : 1fr 3.8fr;
+}
+
+/* header */
+.header
+{
+    grid-column : 2 / span 1;
+
+    display : grid;
+    grid-template-columns : 2fr 1fr;
+    grid-template-rows : 1fr 2fr;
+    align-items : center;
+    padding : 10px;
+}
+
+.search
+{
+    display : flex;
+    align-items : center;
+    gap : 10px;
+}
+
+input[type = "search"]
+{
+    width : 70%;
+    border-radius : 20px;
+    border : transparent;
+    background-color : rgb(204, 204, 204);
+    font-size : 1rem;
+    padding : 4px 7px;
+}
+
+input[type = "search"]:focus
+{
+    outline : none;
+}
+
+.account-info
+{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    gap : 10px;
+}
+
+.notification-icon
+{
+    width : 20px;
+    height : 20px;
+    background : black;
+    border-radius : 50%;
+}
+
+.user-pic
+{
+    background-color : black;
+    width : 40px;
+    height : 40px;
+    border-radius : 50%;
+}
+
+.greeting .user-pic
+{
+    background-color : black;
+    width : 55px;
+    height : 55px;
+    border-radius : 50%;
+}
+
+.greeting
+{
+    display : flex;
+    justify-content : flex-start;
+    align-items: center;
+    gap : 10px;
+}
+
+.user-info
+{
+    margin : 0px;
+    font-size : 1.3rem;
+}
+
+.greeting-text
+{
+    margin : 0px;
+    font-size : 0.9rem;
+}
+
+.actions
+{
+    display : flex;
+    gap : 15px;
+}
+
+.actions > div
+{
+    padding : 8px 20px;
+    font-size : 0.9rem;
+    background-color : rgb(31, 155, 204);
+    border-radius : 20px;
+    color : white;
+}
+
+/* sidebar */
+.sidebar
+{
+    grid-row : 1 / span 2;
+}
+
+.container > div
+{
+    border : 2px solid black;
+}
