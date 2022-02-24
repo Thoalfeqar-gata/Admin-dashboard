@@ -9,6 +9,13 @@ body
     font-family : roboto, arial, helvetica, sans-serif;
 }
 
+:root
+{
+    --blue-color : #1992d4;
+    --yellow-color : #f0b429;
+    --grey-background : #e2e8f0;
+}
+
 .container
 {
     height : 100vh;
@@ -21,6 +28,8 @@ body
 .header
 {
     grid-column : 2 / span 1;
+    box-shadow : 0px 5px 3px rgb(218, 218, 218);
+    z-index: 1; /* to make the box-shadow visible */
 
     display : grid;
     grid-template-columns : 5fr 3fr;
@@ -41,7 +50,7 @@ input[type = "search"]
     width : 75%;
     border-radius : 20px;
     border : transparent;
-    background-color : rgb(204, 204, 204);
+    background-color : var(--grey-background);
     font-size : 1rem;
     padding : 4px 10px;
 }
@@ -59,27 +68,18 @@ input[type = "search"]:focus
     gap : 20px;
 }
 
-.notification-icon
-{
-    width : 20px;
-    height : 20px;
-    background : black;
-    border-radius : 50%;
-}
 
-.user-pic
+.user-pic > img
 {
-    background-color : black;
     width : 40px;
     height : 40px;
     border-radius : 50%;
 }
 
-.greeting .user-pic
+.greeting .user-pic > img
 {
-    background-color : black;
-    width : 55px;
-    height : 55px;
+    width : 60px;
+    height : 60px;
     border-radius : 50%;
 }
 
@@ -114,7 +114,7 @@ input[type = "search"]:focus
 {
     padding : 8px 20px;
     font-size : 0.9rem;
-    background-color : rgb(31, 155, 204);
+    background-color : var(--blue-color);
     border-radius : 20px;
     color : white;
 }
@@ -123,7 +123,7 @@ input[type = "search"]:focus
 .sidebar
 {
     grid-row : 1 / span 2;
-    background-color :rgb(31, 155, 204);
+    background-color :var(--blue-color);
     color  : white;
     display : grid;
     gap : 8vh;
@@ -134,17 +134,10 @@ input[type = "search"]:focus
 {
     display : flex;
     align-items : center;
-    gap : 20px;
-    padding-left : 10px;
+    gap : 1vw;
+    padding-left : 2vw;
 }
 
-.logo-image
-{
-    width : 50px;
-    height : 50px;
-    background-color : black;
-    border-radius : 50%;
-}
 
 .tabs
 {
@@ -166,7 +159,7 @@ input[type = "search"]:focus
     display : flex;
     justify-content : flex-start;
     align-items : center;
-    padding-left : 20px;
+    padding-left : 2vw;
     gap : 10px;
 }
 
@@ -177,10 +170,7 @@ input[type = "search"]:focus
 
 .tab-img
 {
-    width : 10px;
-    height : 10px;
-    background-color : black;
-    border-radius : 50%;
+    color : white;
 }
 
 
@@ -188,7 +178,7 @@ input[type = "search"]:focus
 .main-content
 {
     padding : 10px;
-    background-color : rgb(200, 200, 200);
+    background-color : var(--grey-background);
     display : grid;
     grid-template-columns : 3fr 1fr;
     grid-template-rows : 1fr 1fr;
@@ -206,7 +196,7 @@ input[type = "search"]:focus
 {
     display : grid;
     grid-template-rows : repeat(3, 1fr);
-    grid-template-columns : 1fr 1fr;
+    grid-template-columns : repeat(auto-fit, minmax(300px, 1fr));
     gap : 15px;
     flex-grow : 1;
 }
@@ -215,19 +205,17 @@ input[type = "search"]:focus
 {
     background-color : white;
     border-radius : 8px;
-
+    box-shadow : 0px 5px 3px rgb(218, 218, 218);
     display : grid;
     grid-template-columns : 1fr 30fr;
     grid-template-rows : 10fr 2fr;
     gap : 10px;
 }
 
-
-
 .strip
 {
     grid-row : 1 / span 2;
-    background-color : rgb(0, 134, 146);
+    background-color : var(--yellow-color);
     border-top-left-radius : 8px;
     border-bottom-left-radius : 8px;
 }
@@ -260,13 +248,6 @@ input[type = "search"]:focus
     margin-right : 15px;
 }
 
-.icons > div
-{
-    width : 15px;
-    height : 15px;
-    background-color : black;
-    border-radius : 50%;
-}
 
 .Announcements
 {
@@ -277,9 +258,14 @@ input[type = "search"]:focus
 .Announcements-wrapper
 {
     background-color : white;
+    box-shadow : 0px 5px 3px rgb(218, 218, 218);
     padding : 10px;
     border-radius : 5px;
     flex-grow : 1;
+
+    display : flex;
+    flex-direction : column;
+    justify-content : space-around;
 }
 
 .announcement-title
@@ -303,6 +289,7 @@ input[type = "search"]:focus
 .Trending-wrapper
 {
     background : white;
+    box-shadow : 0px 5px 3px rgb(218, 218, 218);
     border-radius : 5px;
     padding : 15px;
     flex-grow : 1;
@@ -318,11 +305,10 @@ input[type = "search"]:focus
     gap : 10px;
 }
 
-.img
+.trending-project > img
 {
-    width : 40px;
-    height : 40px;
-    background-color : black;
+    width : 60px;
+    height : 60px;
     border-radius : 50%;
 }
 
@@ -334,15 +320,5 @@ input[type = "search"]:focus
 .trending-person-info .id
 {
     font-weight : bold;
+    font-size : 1.1rem;
 }
-
-
-
-
-
-
-
-
-
-
-
